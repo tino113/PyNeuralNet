@@ -3,9 +3,10 @@
 class Axiom:
     """Weighted Links which feed data between nodes"""
 
-    nodeFrom = 0
-    nodeTo = 0
-    weight = 0
+    def __init__(self):
+        self.nodeFrom = 0
+        self.nodeTo = 0
+        self.weight = 0
 
     def create(self,nFrom,nTo,w):
         self.weight = w
@@ -14,4 +15,4 @@ class Axiom:
         return self
 
     def getData(self):
-        return nodeFrom.data() * weight
+        return self.nodeFrom.data() * self.weight

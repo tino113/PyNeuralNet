@@ -1,6 +1,6 @@
-from network import Network
+from py.network import Network
 
-testNet = Network().generate()
+# testNet = Network().generate()
 # determines the fitness of a network
 def fitness():
     pass

@@ -3,10 +3,10 @@ from random import randint
 
 class Node:
     """Nodes perform simple operations on all data fed by an axiom"""
-
-    function = 0  # ^ / * + -
-    axiomsIn = []
-    data = 0
+    def __init__(self):
+        self.function = 0  # ^ / * + -
+        self.axiomsIn = []
+        self.data = 0
 
     def create(self,axIn):
         # choose a random function
@@ -15,7 +15,7 @@ class Node:
         self.data = 0
         return self
 
-    def createInputNode(self,data):
+    def createInputNode(self, data):
         self.data = data
 
     def go(self):

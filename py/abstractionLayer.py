@@ -1,13 +1,18 @@
-from node import Node
-from axiom import Axiom
 from random import uniform
-from mathFuncs import sigmoid
+
+from axiom import Axiom
+from node import Node
+
+from py.mathFuncs import sigmoid
+
 
 class AbstractionLayer:
     """Abstraction layers hold collections of nodes"""
-    nodes = []
-    prevLayerNodes = []
-    axiomList = []
+
+    def __init__(self):
+        self.nodes = []
+        self.prevLayerNodes = []
+        self.axiomList = []
 
     def create(self,prevLNodes):
         self.prevLayerNodes = prevLNodes
