@@ -6,13 +6,17 @@ class Node:
 
     function = 0  # ^ / * + -
     axiomsIn = []
-    axiomsOut = []
-    
     data = 0
 
-    def create(self,axIn,axOut):
+    def create(self,axIn):
         # choose a random function
         self.function = randint(0, 4)
+        self.axiomsIn = axIn
+        self.data = 0
+        return self
+
+    def createInputNode(self,data):
+        self.data = data
 
     def go(self):
         self.data = 0
