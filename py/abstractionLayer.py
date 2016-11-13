@@ -14,9 +14,17 @@ class AbstractionLayer:
         self.prevLayerNodes = []
         self.axiomList = []
 
-    def create(self,prevLNodes):
+    def print(self, verbose = False):
+        print("AbstractionLayer: " + str(self))
+        if verbose:
+            for node in self.nodes:
+                node.print()
+            print(self.axiomList)
+            for axiom in self.axiomList:
+                axiom.print()
+
+    def create(self, prevLNodes):
         self.prevLayerNodes = prevLNodes
-        self.nodes = []
         return self
 
     def addNewNode(self):
@@ -26,9 +34,9 @@ class AbstractionLayer:
             ax = Axiom()
             axIn.append(ax.create(prevN,nd,sigmoid(uniform(-1,1))))
         self.nodes.append(nd.create(axIn))
-        self.axiomList.append(axIn)
+        self.axiomList.extend(axIn)
 
-    def removeNode(self,n):
+    def removeNode(self, n):
         self.nodes.remove(n)
 
     def go(self):

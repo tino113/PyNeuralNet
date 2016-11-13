@@ -8,6 +8,9 @@ class Axiom:
         self.nodeTo = 0
         self.weight = 0
 
+    def print(self):
+        print("axiom: " + str(self) + " from: " + str(self.nodeFrom) + " to: " + str(self.nodeTo) + " weight: " + str(self.weight))
+
     def create(self,nFrom,nTo,w):
         self.weight = w
         self.nodeFrom = nFrom

@@ -8,6 +8,14 @@ class Node:
         self.axiomsIn = []
         self.data = 0
 
+    def print(self, verbose = False):
+        allFuncs = ['^', '/', '*', '+', '-']
+        print("Node: " + str(self) + " func: " + allFuncs[self.function] + " data: " + str(self.data))
+        if verbose:
+            print("Node: " + str(self) + " axioms:")
+            for axiom in self.axiomsIn:
+                axiom.print()
+
     def create(self,axIn):
         # choose a random function
         self.function = randint(0, 4)

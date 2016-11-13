@@ -1,4 +1,5 @@
 from py.abstractionLayer import AbstractionLayer
+from random import randint
 
 class Network:
 
@@ -7,11 +8,24 @@ class Network:
         self.inputNodes = []
         self.outputNodes = []
 
+    def print(self, verbose = False):
+        print("Network: " + str(self))
+        if verbose:
+            for aL in self.abstractionLayers:
+                aL.print(True)
+
+
     # generates a new random network, max layers, max nodes per layer and max
     # axiom weighting can all be determined
-    def generate(self,inputNodes,outputNodes,numAbstractions,numNodesPerLayer):
+    def generate(self,inputNodes,outputNodes,numAbstractions,numNodesPerLayer,abstractionsMax = False, nodesPerLayerMax = False):
         self.inputNodes = inputNodes
         self.outputNodes = outputNodes
+
+        if abstractionsMax:
+            numAbstractions = randint(1, numAbstractions)
+        if nodesPerLayerMax:
+            numNodesPerLayer = randint(1, numNodesPerLayer)
+
         for i in range(numAbstractions):
             aL = AbstractionLayer()
             if i > 0:
