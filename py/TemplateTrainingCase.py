@@ -1,5 +1,5 @@
-from py.network import Network
-from py.node import Node
+from network import Network
+from node import Node
 
 
 # determines the fitness of a network
