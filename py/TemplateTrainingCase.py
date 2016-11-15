@@ -10,16 +10,28 @@ def fitness():
 def inputData():
     nd = Node()
     nd.data = 1
-    result = [nd]
+    nd1 = Node()
+    nd1.data = 1
+    nd2 = Node()
+    nd2.data = 1
+    result = [nd,nd1,nd2]
     return result
 
 # converts data from a abstraction layer into data
 def outputData():
-    pass
+    nd = Node()
+    nd.data = 1
+    nd1 = Node()
+    nd1.data = 1
+    nd2 = Node()
+    nd2.data = 1
+    result = [nd,nd1,nd2]
+    return result
 
 inputs = inputData()
-outputs = []
+outputs = outputData()
 
-testNet = Network().generate(inputs,outputs,1,4,False,True)
+testNet = Network().generate(inputs,outputs,4,20,False,True)
+testNet.draw(512,512)
 
 testNet.print(True)
