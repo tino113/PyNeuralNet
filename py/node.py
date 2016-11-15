@@ -3,10 +3,10 @@ from random import randint
 
 class Node:
     """Nodes perform simple operations on all data fed by an axiom"""
-    def __init__(self):
+    def __init__(self, data = 0):
         self.function = 0  # ^ / * + -
         self.axiomsIn = []
-        self.data = 0
+        self.data = data
 
     def print(self, verbose = False):
         allFuncs = ['^', '/', '*', '+', '-']

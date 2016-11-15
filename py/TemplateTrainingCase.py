@@ -19,14 +19,11 @@ def inputData():
 
 # converts data from a abstraction layer into data
 def outputData():
-    nd = Node()
-    nd.data = 1
-    nd1 = Node()
-    nd1.data = 1
-    nd2 = Node()
-    nd2.data = 1
-    result = [nd,nd1,nd2]
-    return result
+    return [
+      Node(1),
+      Node(1),
+      Node(1)
+    ]
 
 inputs = inputData()
 outputs = outputData()
