@@ -1,10 +1,10 @@
-from py.abstractionLayer import AbstractionLayer
+from abstractionLayer import AbstractionLayer
 from random import randint
 import tkinter as tk
 from threading import Thread
-from py.mathFuncs import hsvTohex
-from py.axiom import Axiom
-from py.mathFuncs import sigmoid
+from mathFuncs import hsvTohex
+from axiom import Axiom
+from mathFuncs import sigmoid
 from random import uniform
 
 class Network:

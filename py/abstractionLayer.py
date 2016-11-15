@@ -3,7 +3,7 @@ from random import uniform
 from axiom import Axiom
 from node import Node
 
-from py.mathFuncs import sigmoid
+from mathFuncs import sigmoid
 
 
 class AbstractionLayer:
