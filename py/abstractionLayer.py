@@ -1,8 +1,8 @@
 from random import uniform
 
 from axiom import Axiom
-from node import Node
-
+from node.Factory import Factory as NodeFactory
+from Logger import Logger
 from mathFuncs import sigmoid
 
 
@@ -18,7 +18,7 @@ class AbstractionLayer:
         print("AbstractionLayer: " + str(self))
         if verbose:
             for node in self.nodes:
-                node.print()
+                Logger(verbose).outputNode(node)
             print(self.axiomList)
             for axiom in self.axiomList:
                 axiom.print()
@@ -29,11 +29,14 @@ class AbstractionLayer:
 
     def addNewNode(self):
         axIn = []
-        nd = Node()
+        node = NodeFactory.create()
+
         for prevN in self.prevLayerNodes:
             ax = Axiom()
-            axIn.append(ax.create(prevN,nd,sigmoid(uniform(-1,1))))
-        self.nodes.append(nd.create(axIn))
+            axIn.append(ax.create(prevN, node, sigmoid(uniform(-1, 1))))
+
+        node.assignAxioms(axIn)
+        self.nodes.append(node)
         self.axiomList.extend(axIn)
 
     def removeNode(self, n):

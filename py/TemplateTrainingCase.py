@@ -1,6 +1,5 @@
 from network import Network
-from node import Node
-
+from node.Factory import Factory as NodeFactory
 
 # determines the fitness of a network
 def fitness():
@@ -8,25 +7,19 @@ def fitness():
 
 # converts data from a source into nodes for first abstraction layer
 def inputData():
-    nd = Node()
-    nd.data = 1
-    nd1 = Node()
-    nd1.data = 1
-    nd2 = Node()
-    nd2.data = 1
-    result = [nd,nd1,nd2]
-    return result
+    return [
+        NodeFactory.create(1),
+        NodeFactory.create(1),
+        NodeFactory.create(1)
+    ]
 
 # converts data from a abstraction layer into data
 def outputData():
-    nd = Node()
-    nd.data = 1
-    nd1 = Node()
-    nd1.data = 1
-    nd2 = Node()
-    nd2.data = 1
-    result = [nd,nd1,nd2]
-    return result
+    return [
+        NodeFactory.create(1),
+        NodeFactory.create(1),
+        NodeFactory.create(1)
+    ]
 
 inputs = inputData()
 outputs = outputData()
