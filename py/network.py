@@ -9,10 +9,10 @@ from random import uniform
 
 class Network:
 
-    def __init__(self):
+    def __init__(self, inputs, outputs):
         self.abstractionLayers = []
-        self.inputNodes = []
-        self.outputNodes = []
+        self.inputNodes = inputs
+        self.outputNodes = outputs
         self.axiomOutList = []
 
     def print(self, verbose = False):
@@ -109,10 +109,7 @@ class Network:
 
     # generates a new random network, max layers, max nodes per layer and max
     # axiom weighting can all be determined
-    def generate(self,inputNodes,outputNodes,numAbstractions,numNodesPerLayer,abstractionsMax = False, nodesPerLayerMax = False):
-        self.inputNodes = inputNodes
-        self.outputNodes = outputNodes
-
+    def generate(self, numAbstractions, numNodesPerLayer, abstractionsMax = False, nodesPerLayerMax = False):
         if abstractionsMax:
             numAbstractions = randint(1, numAbstractions)
 
