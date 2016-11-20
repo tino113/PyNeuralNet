@@ -19,7 +19,7 @@ outputs = [
     NodeFactory.create(1)
 ]
 
-testNet = Network(inputs, outputs).generate(4, 20, False, True)
+testNet = Network(inputs, outputs).generate(4, 20, True)
 
 testNet.draw(512,512)
 

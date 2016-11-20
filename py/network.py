@@ -25,18 +25,16 @@ class Network:
 
     # generates a new random network, max layers, max nodes per layer and max
     # axiom weighting can all be determined
-    def generate(self, numAbstractions, numNodesPerLayer, abstractionsMax = False, nodesPerLayerMax = False):
-        if abstractionsMax:
-            numAbstractions = randint(1, numAbstractions)
-
-        for i in range(numAbstractions):
+    def generate(self, nLayers, numNodesPerLayer, nodesPerLayerMax = False):
+        for i in range(nLayers):
             aL = AbstractionLayer()
-            if nodesPerLayerMax:
-                numNodesPerLayer = randint(len(self.outputNodes), numNodesPerLayer) # ensures diminishing tree to the right
             if i > 0:
                 self.abstractionLayers.append(aL.create(self.abstractionLayers[i-1].nodes))
             else:
                 self.abstractionLayers.append(aL.create(self.inputNodes))
+
+            if nodesPerLayerMax:
+                numNodesPerLayer = randint(len(self.outputNodes), numNodesPerLayer) # ensures diminishing tree to the right
 
             for j in range(numNodesPerLayer):
                 aL.addNewNode()
