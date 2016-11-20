@@ -65,7 +65,7 @@ class Visualization:
         # draw all axioms in one go
         i = 0
         for layer in self.abstractionLayers:
-            for axiom in layer.axiomList:
+            for axiom in layer.axioms:
                 #xs,ys,xe,ye = 10,(j+1)*10,w-10,(j+1)*10 # DEBUG: visualize all axioms
                 fromCoord = nodeDict[axiom.nodeFrom]
                 xs, ys = fromCoord[0],fromCoord[1]

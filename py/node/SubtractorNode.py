@@ -4,6 +4,7 @@ class SubtractorNode(Node):
 
     def __init__(self, data):
         Node.__init__(self, data)
+        Node.type = 4
 
     def __str__(self):
         return '-'
