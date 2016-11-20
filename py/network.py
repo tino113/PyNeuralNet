@@ -27,17 +27,15 @@ class Network:
     # axiom weighting can all be determined
     def generate(self, nLayers, numNodesPerLayer, nodesPerLayerMax = False):
         for i in range(nLayers):
-            aL = AbstractionLayer()
-            if i > 0:
-                self.abstractionLayers.append(aL.create(self.abstractionLayers[i-1].nodes))
-            else:
-                self.abstractionLayers.append(aL.create(self.inputNodes))
+            nodes = self.abstractionLayers[i-1].nodes if i > 0 else self.inputNodes
+            layer = AbstractionLayer(nodes)
+            self.abstractionLayers.append(layer)
 
             if nodesPerLayerMax:
                 numNodesPerLayer = randint(len(self.outputNodes), numNodesPerLayer) # ensures diminishing tree to the right
 
             for j in range(numNodesPerLayer):
-                aL.addNewNode()
+                layer.addNewNode()
 
         for outNode in self.outputNodes:
             axOut = []
