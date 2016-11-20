@@ -17,5 +17,8 @@ class Axiom:
         self.nodeTo = nTo
         return self
 
+    def changeWeight(self, w):
+        self.weight = w
+
     def getData(self):
         return self.nodeFrom.data() * self.weight

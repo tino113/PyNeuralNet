@@ -21,6 +21,19 @@ class Factory:
         elif (seed == SUBTRACT):
             return SubtractorNode(data)
 
+    @staticmethod
+    def createType(seed = 0, data = 0):
+        if (seed == ORDER):
+            return OrderNode(data)
+        elif (seed == DIVIDE):
+            return DivisorNode(data)
+        elif (seed == MULTIPLY):
+            return MultiplierNode(data)
+        elif (seed == SUM):
+            return SummationNode(data)
+        elif (seed == SUBTRACT):
+            return SubtractorNode(data)
+
 ORDER = 0
 
 DIVIDE = 1

@@ -4,6 +4,7 @@ class DivisorNode(Node):
 
     def __init__(self, data):
         Node.__init__(self, data)
+        Node.type = 1
 
     def __str__(self):
         return '/'
