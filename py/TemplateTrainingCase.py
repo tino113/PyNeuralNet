@@ -1,5 +1,6 @@
 from network import Network
 from node.Factory import Factory as NodeFactory
+from visualization import Visualization
 
 # determines the fitness of a network
 def fitness():
@@ -19,8 +20,8 @@ outputs = [
     NodeFactory.create(1)
 ]
 
-testNet = Network(inputs, outputs).generate(4, 20, False, True)
+testNetwork = Network(inputs, outputs).generate(4, 20, False, True)
 
-testNet.draw(512,512)
+testNetwork.print(True)
 
-testNet.print(True)
+Visualization(inputs, outputs, testNetwork.abstractionLayers, testNetwork.axiomOutList).draw(512,512)
