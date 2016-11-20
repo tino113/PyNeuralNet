@@ -41,8 +41,3 @@ class AbstractionLayer:
 
     def removeNode(self, n):
         self.nodes.remove(n)
-
-    def go(self):
-        for node in self.nodes:
-            node.go()
-
