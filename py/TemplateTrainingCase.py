@@ -20,7 +20,7 @@ outputs = [
     NodeFactory.create(1)
 ]
 
-testNetwork = Network(inputs, outputs).generate(4, 20, False, True)
+testNetwork = Network(inputs, outputs).generate(4, 20, True)
 
 testNetwork.print(True)
 

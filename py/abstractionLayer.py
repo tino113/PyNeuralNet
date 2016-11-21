@@ -9,9 +9,9 @@ from mathFuncs import sigmoid
 class AbstractionLayer:
     """Abstraction layers hold collections of nodes"""
 
-    def __init__(self):
+    def __init__(self, prevLayerNodes = []):
         self.nodes = []
-        self.prevLayerNodes = []
+        self.prevLayerNodes = prevLayerNodes
         self.axiomList = []
 
     def print(self, verbose = False):
@@ -22,10 +22,6 @@ class AbstractionLayer:
             print(self.axiomList)
             for axiom in self.axiomList:
                 axiom.print()
-
-    def create(self, prevLNodes):
-        self.prevLayerNodes = prevLNodes
-        return self
 
     def addNewNode(self):
         axIn = []
