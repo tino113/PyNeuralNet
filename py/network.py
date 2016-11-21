@@ -38,9 +38,11 @@ class Network:
 
         for outNode in self.outputNodes:
             axOut = []
+
             for prevN in self.abstractionLayers[-1].nodes:
-                ax = Axiom()
-                axOut.append(ax.create(prevN,outNode,sigmoid(uniform(-1,1))))
+                ax = Axiom(prevN, outNode, sigmoid(uniform(-1,1)))
+                axOut.append(ax)
+
             self.axiomOutList.extend(axOut)
 
         return self
