@@ -3,7 +3,6 @@ from random import randint
 from axiom import Axiom
 from mathFuncs import sigmoid
 from random import uniform
-from visualization import Visualization
 
 class Network:
 
@@ -12,16 +11,12 @@ class Network:
         self.inputNodes = inputs
         self.outputNodes = outputs
         self.axiomOutList = []
-        self.vis = Visualization(inputs, outputs, self.abstractionLayers, self.axiomOutList)
 
     def print(self, verbose = False):
         print("Network: " + str(self))
         if verbose:
             for aL in self.abstractionLayers:
                 aL.print(True)
-
-    def draw(self,w=256,h=256):
-        self.vis.draw(w,h)
 
     # generates a new random network, max layers, max nodes per layer and max
     # axiom weighting can all be determined
@@ -39,9 +34,11 @@ class Network:
 
         for outNode in self.outputNodes:
             axOut = []
+
             for prevN in self.abstractionLayers[-1].nodes:
-                ax = Axiom()
-                axOut.append(ax.create(prevN,outNode,sigmoid(uniform(-1,1))))
+                ax = Axiom(prevN, outNode, sigmoid(uniform(-1,1)))
+                axOut.append(ax)
+
             self.axiomOutList.extend(axOut)
 
         return self

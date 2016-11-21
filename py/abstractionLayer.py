@@ -28,8 +28,8 @@ class AbstractionLayer:
         node = NodeFactory.create()
 
         for prevN in self.prevLayerNodes:
-            ax = Axiom()
-            axIn.append(ax.create(prevN, node, sigmoid(uniform(-1, 1))))
+            ax = Axiom(prevN, node, sigmoid(uniform(-1, 1)))
+            axIn.append(ax)
 
         node.assignAxioms(axIn)
         self.nodes.append(node)
