@@ -47,10 +47,6 @@ class Network:
 
         return self
 
-    def go(self):
-        for aL in self.abstractionLayers:
-            aL.go()
-
     # on a new birth there is a small chance of mutation of axiom weights,
     # a smaller chance of creating a new node in an existing abstraction layer,
     # and an even smaller chance of creating an entirely new abstraction layer.
